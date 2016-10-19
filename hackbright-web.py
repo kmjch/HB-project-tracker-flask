@@ -64,6 +64,27 @@ def project_search_form():
     return render_template("project_search.html")
 
 
+@app.route("/project-add")
+def project_add_form():
+    """Shows form for adding a new project."""
+
+    return render_template("add_project.html")
+
+
+@app.route("/project-add", methods=['POST'])
+def student_add():
+    """Add a project."""
+
+    title = request.form.get('title')
+    description = request.form.get('description')
+    max_grade = request.form.get('max_grade')
+    # hackbright.make_new_student(fname, lname, github)
+
+    html = render_template("student_created.html",
+                           github=github)
+    return html
+
+
 @app.route("/project")
 def get_project():
     """Show information about a project."""

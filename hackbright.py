@@ -149,6 +149,9 @@ def get_all_projects():
     return rows
 
 
+#have to make a create a new project function 
+
+
 def handle_input():
     """Main loop.
 
